@@ -40,3 +40,13 @@ console.log('Total Experience is ', totalExperience);
 
 
 // Grouping by a property, and totaling it too
+let experienceByProfession = teamMembers.reduce((acc,curr) => {
+  let key =curr.profession;
+  if(acc[key]){
+    acc[key] = currentYearsExperience; //if the profession doesnt exist on first pass, still total it 
+  } else {
+    acc[key] = currentYearsExperience;
+  }
+  return acc;
+},{});
+console.log('Years experience by profession is ',experienceByProfession);
